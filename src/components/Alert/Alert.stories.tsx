@@ -16,9 +16,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-        variant: "success",
-        label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ab ipsa recusandae?",
-        title: "Lorem Ipsum"
-    }
+  args: {
+    variant: "success",
+    label:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ab ipsa recusandae?",
+    title: "Lorem Ipsum",
+  },
 };
