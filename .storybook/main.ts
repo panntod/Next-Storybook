@@ -3,12 +3,8 @@ import path from "path";
 
 // Konfigurasi Story Book
 const config: StorybookConfig = {
-
   // Membaca semua file yang include ".stories"
-  stories: [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-  ],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
 
   // Menambahkan plugin
   addons: [
