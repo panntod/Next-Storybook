@@ -6,15 +6,16 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write .",
     "lint": "next lint",
+    "prettier": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "next": "14.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
