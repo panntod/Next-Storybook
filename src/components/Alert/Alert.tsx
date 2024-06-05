@@ -1,30 +1,39 @@
 import { HTMLAttributes } from "react";
+import { BsCheck, BsExclamationCircle, BsExclamationTriangle, BsQuestion } from "react-icons/bs";
+
 import { Button } from "../Button/Button";
+import "./alert.css"
 
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: "success" | "warning" | "danger";
+  variant?: "primary" | "success" | "warning" | "danger";
   classname?: string;
   title: string;
   label: string;
 }
 
 export const Alert = ({ title, label, variant, classname }: AlertProps) => {
-  const variantClass = variant;
+  const icon = variant === "primary" ? <BsQuestion /> : variant === "success" ? <BsCheck /> : variant === "danger" ? <BsExclamationTriangle /> : variant === "warning" ? <BsExclamationCircle /> : ""
+
   return (
-    <div
+    <article
       className={[
-        "rounded-xl px-2 py-1 text-black w-[560px] h-[86px] border flex gap-2",
-        variantClass,
+        "rounded-xl p-4 text-black w-max max-w-[580px] min-h-[100px] border flex gap-2",
+        `bg-${variant}`,
         classname,
       ].join(" ")}
     >
-      <div className="flex space-x-2">
-        <div>
-          <h1 className="text-2xl font-semibold mb-2">{title}</h1>
-          <p className="text-base font-medium">{label}</p>
+      <section className="flex items-center space-x-2">
+        <div className="flex items-start space-x-2">
+          <div className={["p-2 rounded-full", `storybook-alert-${variant}`].join(" ")}>
+            {icon}
+          </div>
+          <header>
+            <h1 className="text-2xl font-semibold">{title}</h1>
+            <p className="text-base font-medium">{label}</p>
+          </header>
         </div>
         <Button label="Label" variant={variant} />
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };

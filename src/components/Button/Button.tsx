@@ -2,8 +2,8 @@ import React from 'react';
 import './button.css';
 
 interface ButtonProps {
-  variant?: 'primary' | 'success' | 'warning' | 'danger';
-  size?: 'small' | 'medium' | 'large';
+  variant?: "primary" | "success" | "warning" | "danger";
+  size?: "small" | "medium" | "large";
   label: string;
   onClick?: () => void;
 }
@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       type="button"
       className={[
-        `border-2 hover:scale-105 transition-all duration-400 rounded-full shadow`,
+        `hover:scale-105 transition-all duration-400 rounded-full shadow`,
         `storybook-button-${size}`,
         `storybook-button-${variant}`,
       ].join(" ")}

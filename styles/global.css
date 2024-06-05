@@ -1,15 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.bg-success {
-  background: #a3fea3;
-}
-
-.bg-warning {
-  background: #ffe09e;
-}
-
-.bg-danger {
-  background: #ff9faf;
-}
