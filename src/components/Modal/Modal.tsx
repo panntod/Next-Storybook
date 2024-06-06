@@ -51,7 +51,7 @@ export const Modal: React.FC<ModalProps> = ({
                             <button
                                 type="button"
                                 onClick={toggleModal}
-                                className={`text-gray-400 bg-transparent hover:${variant === 'dark' ? 'bg-gray-600 hover:text-white' : 'bg-gray-200 hover:text-gray-900'} rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center`}
+                                className={`text-gray-400 bg-transparent ${variant === 'dark' ? 'hover:bg-gray-600 hover:text-white' : 'hover:bg-gray-200 hover:text-gray-900'} rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center`}
                             >
                                 <BsX className='font-semibold text-xl' />
                                 <span className="sr-only">Close modal</span>
@@ -69,12 +69,14 @@ export const Modal: React.FC<ModalProps> = ({
                             >
                                 {accept}
                             </button>
-                            <button
-                                onClick={toggleModal}
-                                className={`py-2.5 px-5 ms-3 text-sm font-medium ${variant === 'dark' ? 'text-gray-400 bg-gray-800 border-gray-600 hover:bg-gray-700 hover:text-white' : 'text-gray-900 bg-white border-gray-200 hover:bg-gray-100 hover:text-blue-700'} focus:z-10 focus:ring-4 ${variant === 'dark' ? 'focus:ring-gray-700' : 'focus:ring-gray-100'} rounded-lg`}
-                            >
-                                {reject}
-                            </button>
+                            {reject &&
+                                <button
+                                    onClick={toggleModal}
+                                    className={`py-2.5 px-5 ms-3 text-sm font-medium ${variant === 'dark' ? 'text-gray-400 bg-gray-800 border-gray-600 hover:bg-gray-700 hover:text-white' : 'text-gray-900 bg-white border-gray-200 hover:bg-gray-100 hover:text-blue-700'} focus:z-10 focus:ring-4 ${variant === 'dark' ? 'focus:ring-gray-700' : 'focus:ring-gray-100'} rounded-lg`}
+                                >
+                                    {reject}
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>
