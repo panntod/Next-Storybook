@@ -1,0 +1,27 @@
+.storybook-toast-success {
+  @apply border-green-500 bg-green-100 text-green-600;
+}
+
+.storybook-toast-danger {
+  @apply border-red-500 bg-red-100 text-red-600;
+}
+
+.storybook-toast-warning {
+  @apply border-yellow-500 bg-yellow-100 text-yellow-600;
+}
+
+.storybook-toast-primary {
+  @apply border-blue-500 bg-blue-100 text-blue-600;
+}
+
+.storybook-toast-small {
+  @apply p-4;
+}
+
+.storybook-toast-medium {
+  @apply p-5;
+}
+
+.storybook-toast-large {
+  @apply p-6;
+}
