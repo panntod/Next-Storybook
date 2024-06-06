@@ -1,44 +1,45 @@
-import { Card, CardProps } from "./Card";
-import { Meta, StoryObj } from "@storybook/react";
-import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Card } from "./Card";
+import { fn } from "@storybook/test";
 
-// This tells Storybook how to list your stories and provide information
-export default {
+const meta: Meta<typeof Card> = {
   title: "Atomic/Card",
   component: Card,
-  argTypes: {
-    variant: { control: "select" },
-    backgroundColor: { control: "color" },
-    fontColor: { control: "color" },
+  parameters: {
+    layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Card>;
-
-// With named export we define component's story
-export const Default: StoryObj<CardProps> = (
-  args: React.JSX.IntrinsicAttributes & CardProps,
-) => <Card {...args} />;
-
-// Define default arguments for the Default StoryObj
-Default.args = {
-  variant: "elevation",
-  classname: "w-64 h-64",
-  label: "test",
+  argTypes: {
+    variant: {
+      control: {
+        type: "select",
+        options: ["primary", "success", "warning", "danger"],
+      },
+    },
+    onClick: { action: "clicked" },
+  },
+  args: {
+    variant: "light",
+    label: "Card",
+    onClick: fn(),
+  },
 };
 
-// Second StoryObj
-export const WithText: StoryObj<CardProps> = (
-  args: React.JSX.IntrinsicAttributes & CardProps,
-) => (
-  <Card {...args}>
-    <div>
-      <span>Story that shows Card component with text</span>
-    </div>
-  </Card>
-);
+export default meta;
+type Story = StoryObj<typeof Card>;
 
-// Define default arguments for the WithText component and inherit arguments from Default component
-WithText.args = {
-  ...Default.args,
-  classname: "w-64 h-64 text-xl bg-green-600",
+export const Light: Story = {
+  args: {
+    variant: "light",
+    title: "Light Theme",
+    label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nobis recusandae saepe?",
+  },
+};
+
+export const Dark: Story = {
+  args: {
+    variant: "dark",
+    title: "Dark Theme",
+    label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nobis recusandae saepe?",
+  },
 };
