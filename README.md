@@ -1,6 +1,6 @@
-## Getting Started
+## Script
 
-First, run the development server:
+Run developer server:
 
 ```bash
 npm run dev
@@ -10,6 +10,18 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
+
+Run storybook:
+
+```bash
+npm run storybook
+# or
+yarn storybook
+# or
+pnpm storybook
+# or
+bun storybook
 ```
 
 ## Design
