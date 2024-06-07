@@ -3,7 +3,7 @@ import { Card } from "./Card";
 import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Card> = {
-  title: "Atomic/Card",
+  title: "Molecule/Card",
   component: Card,
   parameters: {
     layout: "centered",

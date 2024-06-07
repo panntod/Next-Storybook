@@ -3,7 +3,7 @@ import { fn } from "@storybook/test";
 import { Alert } from "./Alert";
 
 const meta = {
-  title: "Atomic/Alert",
+  title: "Molecule/Alert",
   component: Alert,
   parameters: {
     layout: "centered",

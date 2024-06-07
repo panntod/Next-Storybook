@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumb } from "./Breadcrumb";
-import { BsHouse } from "react-icons/bs";
 
 const meta = {
     title: "Atomic/Breadcrumb",
@@ -21,7 +20,6 @@ export const Default: Story = {
             {
                 title: "Home",
                 path: "/",
-                icon: BsHouse
             },
             {
                 title: "Library",
@@ -42,7 +40,6 @@ export const Custom: Story = {
             {
                 title: "Home",
                 path: "/",
-                icon: BsHouse
             },
             {
                 title: "Library",
