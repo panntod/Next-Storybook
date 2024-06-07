@@ -1,12 +1,14 @@
 import React from 'react';
 import { BsX } from 'react-icons/bs';
+import { Button } from '../Button/Button';
 
 interface ModalProps {
     variant: "light" | "dark";
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
     accept: string;
     reject?: string;
+    children?: React.ReactNode;
     onClick?: () => void;
 }
 
@@ -16,6 +18,7 @@ export const Modal: React.FC<ModalProps> = ({
     accept,
     reject,
     description,
+    children,
     onClick,
 }) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -26,28 +29,21 @@ export const Modal: React.FC<ModalProps> = ({
 
     return (
         <>
-            <button
-                onClick={toggleModal}
-                className={
-                    [
-                        "block text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center",
-                        variant === "dark" ? "bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" : "bg-blue-700 hover:bg-blue-800 focus:ring-blue-300"
-                    ].join(" ")}
-                type="button"
-            >
-                Toggle modal
-            </button>
+            <Button label='Toggle Modal' onClick={toggleModal} variant='primary' />
 
             {isOpen && (
                 <div
                     id="static-modal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="modal-title"
                     className="absolute inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
                 >
                     <div className={`relative p-4 w-full max-w-2xl max-h-full ${variant === 'dark' ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'} rounded-lg shadow`}>
-                        <div className={`flex items-center justify-between p-4 border-b rounded-t ${variant === 'dark' ? 'border-gray-600' : 'border-gray-200'}`}>
-                            <h3 className="text-xl font-semibold">
+                        <header className={`flex items-center justify-between p-4 border-b rounded-t ${variant === 'dark' ? 'border-gray-600' : 'border-gray-200'}`}>
+                            <h2 id="modal-title" className="text-xl font-semibold">
                                 {title}
-                            </h3>
+                            </h2>
                             <button
                                 type="button"
                                 onClick={toggleModal}
@@ -56,13 +52,15 @@ export const Modal: React.FC<ModalProps> = ({
                                 <BsX className='font-semibold text-xl' />
                                 <span className="sr-only">Close modal</span>
                             </button>
-                        </div>
-                        <div className="p-4 space-y-4">
-                            <p className={`text-base leading-relaxed ${variant === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                                {description}
-                            </p>
-                        </div>
-                        <div className={`flex items-center p-4 border-t rounded-b ${variant === 'dark' ? 'border-gray-600' : 'border-gray-200'}`}>
+                        </header>
+                        {children ?? (
+                            <section className="p-4 space-y-4">
+                                <p className={`text-base leading-relaxed ${variant === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                                    {description}
+                                </p>
+                            </section>
+                        )}
+                        <footer className={`flex items-center p-4 border-t rounded-b ${variant === 'dark' ? 'border-gray-600' : 'border-gray-200'}`}>
                             <button
                                 onClick={onClick}
                                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -77,7 +75,7 @@ export const Modal: React.FC<ModalProps> = ({
                                     {reject}
                                 </button>
                             }
-                        </div>
+                        </footer>
                     </div>
                 </div>
             )}
