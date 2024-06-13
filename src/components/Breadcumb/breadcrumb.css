@@ -1,9 +1,0 @@
-.storybook-breadcrumb-small {
-  @apply text-sm space-x-2 font-normal;
-}
-.storybook-breadcrumb-medium {
-  @apply text-base space-x-4 font-medium;
-}
-.storybook-breadcrumb-large {
-  @apply text-lg space-x-4 font-semibold;
-}

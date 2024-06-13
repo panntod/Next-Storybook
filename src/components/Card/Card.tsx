@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { FC, HTMLAttributes } from "react";
 import { Button } from "../Button/Button";
-import "./card.css"
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: "light" | "dark";
@@ -18,8 +17,12 @@ export const Card: FC<CardProps> = ({
   title,
   label,
 }) => {
+  const variants = {
+    "dark": "bg-gray-800 border-gray-700 text-white",
+    "light": "bg-white border border-gray-200 text-gray-900"
+  }[variant]
   return (
-    <div className={["max-w-sm rounded-lg shadow", `storybook-card-${variant}`].join(" ")}>
+    <div className={["max-w-sm rounded-lg shadow", variants].join(" ")}>
       <Link href="#">
         <Image className="rounded-t-lg" src={image} alt={title} width={600} height={400} />
       </Link>
