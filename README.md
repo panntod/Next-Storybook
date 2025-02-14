@@ -1,40 +1,72 @@
-## Script
+# Next.js Storybook Project
 
-Run developer server:
+This project is a **Next.js application** integrated with **Storybook** for building and testing UI components. It follows a structured approach, organizing reusable components into **atoms, molecules, and organisms**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+Ensure you have the following installed:
+
+- **[Node.js](https://nodejs.org/)**
+- **[pnpm](https://pnpm.io/)** (or use npm/yarn)
+
+### 📥 Installation
+
+#### 1️⃣ Clone the Repository
+
+```sh
+git clone https://github.com/your-username/next-storybook.git
+cd next-storybook
+```
+
+#### 2️⃣ Install Dependencies
+
+```sh
+pnpm install
+```
+
+## 🛠 Development
+
+### ▶️ Running the Development Server
+
+Start the **Next.js** development server:
+
+```sh
 pnpm dev
-# or
-bun dev
 ```
 
-Run storybook:
+### 🏗 Building the Project
 
-```bash
-npm run storybook
-# or
-yarn storybook
-# or
+Build the project for production:
+
+```sh
+pnpm build
+```
+
+## 📖 Storybook
+
+### ▶️ Running Storybook
+
+Start **Storybook** to preview UI components:
+
+```sh
 pnpm storybook
-# or
-bun storybook
 ```
 
-## Design
+### 🏗 Building Storybook
 
-[UI KIT V2 - MACHINE LEARNING](https://www.figma.com/design/xLHGdaHhUtkBAAITBtnxIH/%F0%9F%8E%A8-UI-Kit-V2---Copy?node-id=87-788&t=x8PPopu0VZlzEHUV-0)
+Build Storybook for production:
 
-## Session 1
+```sh
+pnpm build-storybook
+```
 
-Materi:
+---
 
-- Mempelajari cara instalasi next typescript
-- Mempelajari cara initialisasi storybook
-- Mempelajari beberapa dasar dasar storybook
-- Mempelajari Atomic Design (Atom, Molecule, Organism, Template, Page)
+📌 **Notes:**
 
-[Pertemuan Pertama - Storybook](https://www.canva.com/design/DAF-OzxUIas/7-oDRo65SNSpHVOlwPAZRQ/edit)
+- Make sure all dependencies are installed before running the commands.
+- For more details, check the official [Next.js](https://nextjs.org/) and [Storybook](https://storybook.js.org/) documentation.
+
+> Happy coding! 🎨🚀
